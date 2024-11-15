@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
+import { HashRouter as Router } from 'react-router-dom';
 import { getTrackBPMs, getTrackDetails, getPlaylistTrackIds, extractSpotifyId, getPlaylistDetails } from './services/spotify';
 import { getSPMData } from './services/airtable';
 import SongForm from './components/SongForm';
@@ -140,6 +141,7 @@ function App() {
   };
 
   return (
+    <Router>
     <div className="app-container" style={{ background: backgroundGradient }}>
       <div className="main-content">
         <div className="header">
@@ -165,6 +167,7 @@ function App() {
         onClose={() => setShowHistory(false)}
       />
     </div>
+    </Router>
   );
 }
 
