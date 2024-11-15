@@ -1,7 +1,6 @@
 /* App.css */
 
 /* Main container */
-/* Default gradient background */
 .app-container {
   display: flex;
   flex-direction: row;
@@ -16,21 +15,13 @@
 
 .main-content {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   padding-right: 20px;
-  max-width: calc(100% - 320px); /* Ensures space for the sidebar */
-  overflow: hidden; /* Prevents overflow into sidebar */
+  overflow: hidden;
 }
 
 /* Header */
 .header {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-bottom: 20px;
 }
 
@@ -40,16 +31,11 @@
   margin-bottom: 10px;
 }
 
-.header img.app-logo {
-  margin-bottom: 10px;
-}
-
 .header input[type="text"] {
   padding: 8px;
-  width: 100%; /* Full width input on mobile */
-  max-width: 300px; /* Limit input size on larger screens */
+  width: 300px;
   font-size: 1rem;
-  margin-bottom: 10px;
+  margin-right: 10px;
 }
 
 .header button {
@@ -60,12 +46,10 @@
   border: none;
   color: #fff;
   transition: background-color 0.3s ease;
-  width: 100%;
-  max-width: 300px; /* Limit button size on larger screens */
 }
 
 .header button:hover {
-  background-color: #1aa34a;
+  background-color: #1aa34a; /* Darker green on hover */
 }
 
 /* Playlist or Song Results */
@@ -159,7 +143,6 @@
 .request-history-sidebar h2 {
   font-size: 1.5rem;
   margin-bottom: 20px;
-  margin-left: 20px;
 }
 
 .history-list {
@@ -207,14 +190,12 @@
 @media (max-width: 768px) {
   .app-container {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     padding: 10px;
   }
 
   .main-content {
-    padding: 10px;
-    max-width: 100%;
+    max-width: 100%; /* Full width on smaller screens */
+    padding-right: 0;
   }
 
   .header h1 {
@@ -261,12 +242,12 @@
   }
 
   .request-history-sidebar {
-    
+    display: none; /* Hidden by default on mobile */
     width: 100%;
+    position: relative;
     padding: 10px;
     border-left: none;
     border-top: 1px solid #ddd;
-    display: none; /* Hidden by default on mobile */
   }
 
   /* Show sidebar when active */
@@ -275,7 +256,7 @@
   }
 
   .history-toggle-button {
-    display: block;
+    display: block; /* Show toggle button on mobile */
     position: fixed;
     top: 20px;
     right: 20px;
@@ -283,7 +264,7 @@
     color: #fff;
     border: none;
     padding: 12px 16px;
-    border-radius: 10px;
+    border-radius: 5%;
     font-size: 1.2rem;
     cursor: pointer;
     z-index: 1000;
@@ -300,10 +281,6 @@
     font-size: 1.8rem;
   }
 
-  .main-content {
-    max-width: 100%; /* Full width on mobile */
-  }
-
   .header input[type="text"],
   .header button {
     font-size: 0.9rem;
@@ -316,6 +293,11 @@
 
   .playlist-header h2 {
     font-size: 1.5rem;
+  }
+
+  .playlist-cover img {
+    width: 100px;
+    height: 100px;
   }
 
   .track-title {

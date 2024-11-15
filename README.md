@@ -1,70 +1,111 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# The BS Converter
 
-## Available Scripts
+The BS Converter is a web application that allows users to convert songs' BPM (Beats Per Minute) to SPM (Strokes Per Minute). It fetches song data from Spotify and matches it with custom SPM data for different types of workouts or activities, making it easier to find songs with rhythms that match a specific cadence.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Enter a Spotify song or playlist URL to get BPM and SPM information.
+- Converts BPM to SPM based on user-defined mappings.
+- Displays song details and SPM recommendations.
+- Allows users to view request history and revisit past conversions.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Setup
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Clone the Repository**
 
-### `npm test`
+   ```bash
+   git clone https://github.com/ben-is-jammin/the-bs-converter.git
+   cd the-bs-converter
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Install Dependencies**
 
-### `npm run build`
+   Ensure you have [Node.js](https://nodejs.org/) installed, then run:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. **Environment Variables**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   Create a `.env` file in the root directory to store your environment variables. Here’s an example of the required variables:
 
-### `npm run eject`
+   ```plaintext
+   REACT_APP_SPOTIFY_CLIENT_ID=your_spotify_client_id
+   REACT_APP_SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
+   REACT_APP_AIRTABLE_API_KEY=your_airtable_api_key
+   REACT_APP_AIRTABLE_BASE_ID=your_airtable_base_id
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   Replace each `your_*` with your actual API keys.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Run the Development Server**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   npm start
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   The app should now be running on `http://localhost:3000`.
 
-## Learn More
+5. **Build for Production**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   To create an optimized production build, run:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+   npm run build
+   ```
 
-### Code Splitting
+   This will create a `build` folder with the production-ready code.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Deployment on GitHub Pages
 
-### Analyzing the Bundle Size
+1. **Install the GitHub Pages package as a dev dependency**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ```bash
+   npm install gh-pages --save-dev
+   ```
 
-### Making a Progressive Web App
+2. **Update `package.json`**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   In `package.json`, add the following fields:
 
-### Advanced Configuration
+   ```json
+   "homepage": "https://<your-github-username>.github.io/the-bs-converter"
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   Under `scripts`, add:
 
-### Deployment
+   ```json
+   "predeploy": "npm run build",
+   "deploy": "gh-pages -d build"
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+3. **Deploy**
 
-### `npm run build` fails to minify
+   Run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   ```bash
+   npm run deploy
+   ```
+
+   Your app will now be deployed to GitHub Pages.
+
+## Technologies Used
+
+- **React**: Frontend library
+- **Spotify API**: Fetches song data
+- **Airtable API**: Manages custom BPM-to-SPM data
+- **GitHub Pages**: Deployment
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/ben-is-jammin/the-bs-converter/issues) if you want to contribute.
+
+## Acknowledgments
+
+Thanks to the open-source community for the tools and resources that make projects like this possible.

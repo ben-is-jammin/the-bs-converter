@@ -1,0 +1,119 @@
+/* Sidebar container */
+.request-history-sidebar {
+  width: 300px;
+  padding: 20px;
+  border-left: 1px solid #ddd;
+  overflow-y: auto;
+  overflow-x: hidden; /* Prevents any accidental overflow */
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  color: #fff;
+  z-index: 2; /* Ensures it stays above other elements */
+  transition: transform 0.3s ease; /* Smooth slide animation */
+}
+
+/* Adjusted positioning for desktop */
+@media (min-width: 769px) {
+  .request-history-sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  .close-button {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .request-history-sidebar {
+    position: fixed;
+    width: 100vw; /* Full width on mobile */
+    height: 100vh; /* Full height */
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-top: 1px solid #ddd;
+    transform: translateX(100%); /* Hidden off-screen initially */
+    z-index: 1000; /* Ensure it's above main content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  /* When active, slide in */
+  .request-history-sidebar.active {
+    transform: translateX(0);
+  }
+
+  /* Close button styles */
+  .close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #ff5c5c;
+    padding: 12px 16px;
+    border: none;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    z-index: 1001;
+  }
+}
+
+.history-list {
+  margin-top: 20px;
+  overflow-y: auto;
+  width: 100%; /* Ensure it spans the full width */
+  height: calc(100% - 20px); /* Takes the full sidebar height, minus top margin */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.track-history-item,
+.playlist-history-item {
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Adjusted for dark background */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.track-history-item:hover,
+.playlist-history-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.track-art,
+.playlist-art {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.track-info,
+.playlist-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.track-title,
+.playlist-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+}
+
+.track-spm,
+.playlist-track-count {
+  font-size: 0.85rem;
+  color: #cccccc;
+  text-align: center;
+}
