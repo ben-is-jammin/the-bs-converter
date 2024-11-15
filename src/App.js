@@ -145,7 +145,7 @@ function App() {
     <div className="app-container" style={{ background: backgroundGradient }}>
       <div className="main-content">
         <div className="header">
-          <img src="/logo512.png" alt="The BS Converter Logo" className="app-logo" />
+          <img src="./logo512.png" alt="The BS Converter Logo" className="app-logo" />
           <h1>The BS Converter</h1>
           <SongForm onFetchSong={handleFetchSong} onFetchPlaylist={handleFetchPlaylist} />
         </div>
