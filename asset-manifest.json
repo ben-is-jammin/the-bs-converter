@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ben-is-jammin.github.io/the-bs-converter/static/css/main.060a95c4.css",
+    "main.js": "/ben-is-jammin.github.io/the-bs-converter/static/js/main.31bad678.js",
+    "static/js/453.ede8be88.chunk.js": "/ben-is-jammin.github.io/the-bs-converter/static/js/453.ede8be88.chunk.js",
+    "index.html": "/ben-is-jammin.github.io/the-bs-converter/index.html",
+    "main.060a95c4.css.map": "/ben-is-jammin.github.io/the-bs-converter/static/css/main.060a95c4.css.map",
+    "main.31bad678.js.map": "/ben-is-jammin.github.io/the-bs-converter/static/js/main.31bad678.js.map",
+    "453.ede8be88.chunk.js.map": "/ben-is-jammin.github.io/the-bs-converter/static/js/453.ede8be88.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.060a95c4.css",
+    "static/js/main.31bad678.js"
+  ]
+}
