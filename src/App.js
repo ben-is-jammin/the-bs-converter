@@ -148,6 +148,7 @@ function App() {
         <div className="header">
           <img src={logo} alt="The BS Converter Logo" className="app-logo" />
           <h1>The BS Converter</h1>
+          <h3>Turning Spotify beats into rowing beats!</h3>
           <SongForm onFetchSong={handleFetchSong} onFetchPlaylist={handleFetchPlaylist} />
         </div>
         {playlistData ? (

@@ -21,6 +21,7 @@ const SongForm = ({ onFetchSong, onFetchPlaylist }) => {
         placeholder="Enter Spotify URL"
       />
       <button type="submit">Analyze Tracks</button>
+      <p>Insert a Spotify song or playlist URL to analyze the tracks.</p>
     </form>
   );
 };
